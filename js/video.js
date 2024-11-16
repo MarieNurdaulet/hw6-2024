@@ -11,9 +11,11 @@ window.addEventListener("load", function() {
 });
 
 // #2 Play the video and update the volume information
-video.volume = 1.0;
+let slider = document.querySelector("#slider");
+let output = document.querySelector("#volume");
 
 document.querySelector("#play").addEventListener("click", function() {
+	output.innerHTML = slider.value + "%";
 	video.play();
 	console.log("Play Video");
 });
@@ -75,8 +77,6 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 // #8 Change the volume based on the slider and update the volume information.
 
-let slider = document.querySelector("#slider");
-let output = document.querySelector("#volume");
 output.innerHTML = slider.value + "%";
 video.volume = slider.value / 100;
 slider.addEventListener('input', function(){
