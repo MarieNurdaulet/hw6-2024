@@ -10,25 +10,14 @@ window.addEventListener("load", function() {
 	console.log("Loop is set to false");
 });
 
+// #2 Play the video and update the volume information
+video.volume = 1.0;
+
 document.querySelector("#play").addEventListener("click", function() {
 	video.play();
-	video.volume = 1.0;
 	console.log("Play Video");
 });
 
-
-// #2 Play the video and update the volume information
-// #8 Change the volume based on the slider and update the volume information.
-
-let slider = document.querySelector("#slider");
-let output = document.querySelector("#volume");
-output.innerHTML = slider.value + "%";
-video.volume = slider.value / 100;
-slider.addEventListener('input', function(){
-	output.innerHTML = this.value + "%";
-	video.volume = this.value / 100;
-	console.log("Volume is changed " + video.volume);
-});
 
 
 // #3 Pause the video
@@ -81,6 +70,19 @@ document.querySelector("#mute").addEventListener("click", function() {
 		document.querySelector("#mute").innerHTML = "Unmute"
 		console.log("Video was muted")
 	}
+});
+
+
+// #8 Change the volume based on the slider and update the volume information.
+
+let slider = document.querySelector("#slider");
+let output = document.querySelector("#volume");
+output.innerHTML = slider.value + "%";
+video.volume = slider.value / 100;
+slider.addEventListener('input', function(){
+	output.innerHTML = this.value + "%";
+	video.volume = this.value / 100;
+	console.log("Volume is changed " + video.volume);
 });
 
 
