@@ -12,6 +12,7 @@ window.addEventListener("load", function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	video.play();
+	video.volume = 1.0;
 	console.log("Play Video");
 });
 
