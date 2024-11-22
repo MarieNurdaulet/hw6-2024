@@ -15,7 +15,7 @@ let slider = document.querySelector("#slider");
 let output = document.querySelector("#volume");
 
 document.querySelector("#play").addEventListener("click", function() {
-	// output.innerHTML = slider.value + "%";
+	output.innerHTML = slider.value + "%";
 	video.play();
 	console.log("Play Video");
 });
